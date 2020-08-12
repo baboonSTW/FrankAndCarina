@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* If you ask me what is the luckiest thing I have encountered in my life.</span><br />
+				<span class="space"/><span class="comments">* I will say I met you, without hesitation.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"Frank"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Carina"</span>);<br />
+				setDate(12.19.2019);<br />
+				<span class="comments">// Dec 19, 2019, Our worlds had intersection. </span><br />
+				i.greet(u);<br />
+				<span class="comments">// When you said that we would save money together to buy what we wanted, I was deeply moved.</span><br />
+				<span class="comments">// It was at that moment, I wanna be with you forever.</span><br />
+				setDate(1.11.2020);<br />
+				<span class="comments">// I told you I love you. Luckily</span><br />
+				u.accept(i);<br />
+				<span class="comments">// No matter how far apart, our hearts are always together.</span><br />
+				serDate(1.17.2020);<br />
+				<span class="comments">// I went to America.</span><br />
+				i.miss(u);<br />
+				<span class="comments">// The more I get along with you, the more I look forward to the future.</span><br />
+				u.complete(i);<br />
+				<span class="placeholder"/><span class="comments">// I will be an artist, you will be a Silicon Valley girl.</span><br />
+				<span class="placeholder"/><span class="comments">// Babe, I will love you forever and ever!</span><br />
+				i.marry(u);<br /> <span class="comments">// Someday, I will marry U. And ...</span><br />
+				i.liveHappilyWith(u);<br />
+			</div>
+			<div id="loveHeart" >
+				<canvas id="garden" style="background-image:url(bk.png); background-size: 100%; 100%; opacity:0.4;"></canvas>
+				<div id="words" style="opacity:1;">
+					<div id="messages">
+						Carina, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Frank</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+ 		var offsetX = $("#loveHeart").width() / 2;
+ 		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2020, 1, 11);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
